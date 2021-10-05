@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     
-    <Header/>
+    <Header @searchFilm="saveTextFilm" />
     <Films/>
 
   </div>
@@ -16,6 +16,11 @@ export default {
   components: {
     Header,
     Films
+  },
+  methods: {
+    saveTextFilm(text) {
+      console.log(text);
+    }
   }
 }
 </script>

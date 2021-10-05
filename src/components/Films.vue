@@ -1,13 +1,14 @@
 <template>
     <div>
       <Film/>
-      <button @click="print" >ciao</button>
+      <!-- <button @click="call" >call</button> -->
+      <!-- <h2>{{ listFilms }}</h2> -->
     </div>
 </template>
 
 <script>
 import Film from './Film.vue';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default {
     
@@ -15,14 +16,26 @@ export default {
 
   data() {
     return {
-      listFilms: {},
+      // listFilms: [],
     }
   },
-  methods: {
-    print() {
-      console.log(this.listFilms);
-    }
-  },
+
+  // methods: {
+  //   call() {
+  //     axios.get('https://api.themoviedb.org/3/search/movie', {
+  //     params: {
+  //       api_key: '754efc644ca164ed7ad0793e2816a304',
+  //       query: 'Ritorno al futuro',
+  //       language: 'it',
+  //     }
+  //   })
+
+  //   .then( (response) => {
+  //     console.log(response.data.results[0].adult);
+  //     this.listFilms = response.data.results[0].adult;
+  //   });
+  //   }
+  // },
 
   props: {
     
@@ -31,23 +44,6 @@ export default {
   components: {
     Film
   },
-
-  created() {
-      axios.get('https://api.themoviedb.org/3/search/movie', {
-      params: {
-        api_key: '754efc644ca164ed7ad0793e2816a304',
-        query: 'Ritorno al futuro',
-        language: 'it',
-      }
-    })
-
-    .then( (response) => {
-      console.log(response.data.results[0]);
-      console.log(this);
-      this.listFilms = response.data.results;
-    });
-  }
-  // axios.get("url").then
     
 }
 </script>

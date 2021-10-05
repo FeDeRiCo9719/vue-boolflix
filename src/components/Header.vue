@@ -1,8 +1,8 @@
 <template>
   <header>
     <form>
-      <input type="text" placeholder="Search.." v-model="textFilmSearch" @click.prevent="$emit('searchFilm', textFilmSearch )" >
-      <button>Search</button>
+      <input type="text" placeholder="Search.." v-model="textFilmSearch" >
+      <button @click.prevent="$emit('searchFilm', textFilmSearch )" >Search</button>
     </form>
   </header>
 </template>
