@@ -1,21 +1,12 @@
 <template>
-    <Film/>
+    
 </template>
 
 <script>
-import Film from './Film.vue'
 
 export default {
     
-  name: 'Films',
-
-  props: {
-    
-  },
-
-  components: {
-    Film
-  },
+  name: 'Film',
 }
 </script>
 

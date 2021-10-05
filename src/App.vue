@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Films from './components/Films.vue'
+import Header from './components/Header.vue';
+import Films from './components/Films.vue';
 
 export default {
   name: 'App',
