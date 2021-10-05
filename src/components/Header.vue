@@ -1,10 +1,20 @@
 <template>
-  
+  <header>
+    <form>
+      <input type="text" placeholder="Search.." v-model="textFilmSearch" @click.prevent="$emit('searchFilm', textFilmSearch )" >
+      <button>Search</button>
+    </form>
+  </header>
 </template>
 
 <script>
 export default {
   name: 'Header',
+  data() {
+    return {
+      textFilmSearch: '',
+    }
+  },
   props: {
     
   }
@@ -13,5 +23,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+header {
+  background-color: rgb(75, 75, 75);
+  padding: 20px;
+}
 </style>
