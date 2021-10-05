@@ -2,7 +2,7 @@
   <div id="app">
     
     <Header @searchFilm="saveTextFilm" />
-    <Films/>
+    <Films :savedTextFilm="savedTextFilm" />
 
   </div>
 </template>
@@ -13,13 +13,22 @@ import Films from './components/Films.vue';
 
 export default {
   name: 'App',
+
   components: {
     Header,
     Films
   },
+
+  data() {
+    return {
+      savedTextFilm:'',
+    }
+  },
+
   methods: {
     saveTextFilm(text) {
       console.log(text);
+      this.savedTextFilm = text;
     }
   }
 }

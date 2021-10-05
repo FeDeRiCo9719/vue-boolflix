@@ -11,7 +11,8 @@ import Film from './Film.vue';
 // import axios from 'axios';
 
 export default {
-    
+  props: ['savedTextFilm'],
+
   name: 'Films',
 
   data() {
@@ -36,11 +37,6 @@ export default {
   //   });
   //   }
   // },
-
-  props: {
-    
-  },
-
   components: {
     Film
   },
