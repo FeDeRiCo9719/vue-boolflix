@@ -1,11 +1,14 @@
 <template>
   <div>
-    <li v-for="(item, index) in listFilms" :key="index">
-      <h3>{{ listFilms[index].title }}</h3> 
-      <h4>{{ listFilms[index].original_title }}</h4> 
-      <div>{{ listFilms[index].original_language }}</div> 
-      <div>{{ listFilms[index].vote_average }}</div> 
-    </li>
+    <ul>
+      <li v-for="(item, index) in listFilms" :key="index">
+        <h3>{{ listFilms[index].title }}</h3> 
+        <h4>{{ listFilms[index].original_title }}</h4> 
+        <div>{{ listFilms[index].original_language }}</div> 
+        <div>{{ listFilms[index].vote_average }}</div>
+        <img :src="('https://image.tmdb.org/t/p/w342' + listFilms[index].poster_path)" alt=""> <!-- https://image.tmdb.org/t/p/w342 -->
+      </li>
+    </ul>
   </div>
 </template>
 
