@@ -10,14 +10,13 @@
 <script>
 export default {
   name: 'Header',
+  
   data() {
     return {
       textFilmSearch: '',
     }
   },
-  props: {
-    
-  }
+
 }
 </script>
 
