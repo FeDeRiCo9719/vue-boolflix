@@ -15,7 +15,7 @@
       <TVseries :listTVseries="TVseriesFound"/>
 
       <!-- No results -->
-      <h2 v-if="filmsFound.length === 0 & TVseriesFound.length === 0 & savedText != '' " >Sorry, no results for "{{ savedText }}"</h2>
+      <h2 v-if="savedText != '' & filmsFound.length <1 & TVseriesFound.length <1 " >Sorry, no results for "{{ savedText }}"</h2>
              
     </div>
 </template>
@@ -31,7 +31,7 @@ export default {
     TVseries
   },
   props: ['filmsFound', 'TVseriesFound', 'savedText'],
-  name: 'Films',   
+  name: 'Films',
 }
 </script>
 

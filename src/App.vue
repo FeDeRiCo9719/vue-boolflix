@@ -23,7 +23,7 @@ export default {
     return {
       savedText: [],
       filmsFound: [],
-      TVseriesFound: []
+      TVseriesFound: [],
     }
   },
 
@@ -35,7 +35,10 @@ export default {
     // },
 
     saveTextFilm(text) {
+      // TEXT SEARCH
       this.savedText = text;
+      console.log(this.savedText);
+
       // SEARCH MOVIES
       axios.get('https://api.themoviedb.org/3/search/movie', {
       params: {
@@ -46,7 +49,7 @@ export default {
 
       .then( (response) => {
         this.filmsFound = response.data.results;
-        console.log(this.filmsFound[0]);
+        console.log(this.filmsFound);
       });
 
       // SEARCH TV SERIES
@@ -58,9 +61,9 @@ export default {
       }})
 
       .then( (response) => {
-        console.log(response.data.results);
+        // console.log(response.data.results);
         this.TVseriesFound = response.data.results;
-        console.log(this.TVseriesFound[0]);
+        // console.log(this.TVseriesFound);
       });
     }
   },
