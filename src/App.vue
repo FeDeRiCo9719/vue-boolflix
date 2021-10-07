@@ -2,7 +2,7 @@
   <div id="app">
     
     <Header @searchFilm="saveTextFilm" />
-    <Films :filmsFound="filmsFound" :TVseriesFound="TVseriesFound" />  <!-- :TVseriesFound="TVseriesFound" (props Tv series) -->
+    <Films :filmsFound="filmsFound" :TVseriesFound="TVseriesFound" :savedText="savedText" />  <!-- :TVseriesFound="TVseriesFound" (props Tv series) -->
   </div>
 </template>
 
@@ -21,6 +21,7 @@ export default {
 
   data() {
     return {
+      savedText: [],
       filmsFound: [],
       TVseriesFound: []
     }
@@ -34,6 +35,7 @@ export default {
     // },
 
     saveTextFilm(text) {
+      this.savedText = text;
       // SEARCH MOVIES
       axios.get('https://api.themoviedb.org/3/search/movie', {
       params: {
