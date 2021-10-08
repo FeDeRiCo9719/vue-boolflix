@@ -8,7 +8,7 @@
 
         <!-- language -->
         <div class="tvLanguage">
-          <img v-if="flagsTV.includes(listTVseries[index].original_language)" :src="require(`../assets/img/flags/${listTVseries[index].original_language}.png`)" alt="language icon TV">
+          <img v-if="flagsTV.includes(listTVseries[index].original_language)" :src="`../assets/img/flags/${listTVseries[index].original_language}.png`" alt="language icon TV">
           <div class="TVunknown" v-else alt="language unknown TV">?</div>          
         </div> 
 
