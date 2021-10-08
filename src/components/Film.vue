@@ -5,17 +5,20 @@
     <ul>
       <li v-for="(item, index) in listFilms" :key="index">
 
+        <div class="trama">{{ listFilms[index].overview }}</div>
+
         <!-- poster -->
         <div class="poster">
           <img :src="('https://image.tmdb.org/t/p/w342' + listFilms[index].poster_path)" alt=""> <!-- https://image.tmdb.org/t/p/w342 -->
         </div>
-        <!-- info -->
-        <div class="info">
-          <div class="title">{{ listFilms[index].title }}</div> 
-          <div>{{ listFilms[index].overview }}</div>
-        </div>
 
         <div class="bottomBox">
+          <!-- info -->
+          <div class="info">
+            <div class="title">{{ listFilms[index].title }}</div> 
+            <div>{{ listFilms[index].overview }}</div>
+          </div>
+        
           <!-- language -->
           <div class="language">
             <img v-if="flags.includes(listFilms[index].original_language)" :src="require(`../assets/img/flags/${listFilms[index].original_language}.png`)" alt="language icon">
@@ -72,10 +75,33 @@ export default {
     cursor: pointer;
     display: inline-block;
     margin: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    width: 180px;
+    // padding: 10px;
+    width: 250px;
+    height: 350px;
     background-color: rgb(47, 55, 68);
+    // border-radius: 10px;
+    position: relative;
+
+    &:hover .trama {
+      display: flex;
+      color: black;
+    }
+
+    .trama {
+      position: absolute;
+      background-color: rgba(255, 255, 255, 0.719);
+      font-weight: 500;
+      // border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      font-size: 15px;
+      padding: 10px;
+      white-space: wrap; 
+      overflow: hidden;
+      text-overflow: ellipsis; 
+      display: none;
+    }
 
     .info {
       div {
@@ -95,8 +121,9 @@ export default {
 
     }
     .bottomBox {
-      display: flex;
-      justify-content: space-between;
+      padding: 10px;
+      // display: flex;
+      // justify-content: space-between;
       margin-top: 20px;
     }
   }
@@ -129,10 +156,9 @@ export default {
   // posters
   .poster {
     width: 100%;
-    height: 150px;
+    height: 220px;
     background-color: grey;
     overflow: hidden;
-    margin-bottom: 20px;
 
     img {
       width: 100%;
